@@ -22,7 +22,7 @@ app.get('/p/:tagId', function(req, res) {
       MongoClient.connect("mongodb://test:test123@ds027825.mongolab.com:27825/heroku_gcvgglf8",function(err, db){
         if(err) throw err;
 				
-	    db.collection('test').findOne({"e_id":id}, function(err, doc){
+	    db.collection('test').findOne({e_id:id}, function(err, doc){
         if(err) throw err;
         console.log("Server:"+doc);
 		
