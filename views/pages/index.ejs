@@ -26,9 +26,7 @@ div.innerHTML = div.innerHTML +"<div>"+JSON.stringify(data)+"</div>";
   if (i > 20){
     
     $("#data").find('div:first').css("color","blue")
-  $('#data').find('div:first').fadeOut(200);
-  
-  $('#data').find('div:first').remove();
+  $("#data").find('div:first').fadeOut(300, function(){ $(this).remove();});
   }
 });
 }
