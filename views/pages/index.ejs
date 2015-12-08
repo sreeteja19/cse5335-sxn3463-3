@@ -18,12 +18,14 @@ $( document ).ready(function() {
   console.log(i);
   console.log(data);
   var div = document.getElementById('data');
-div.innerHTML = div.innerHTML + JSON.stringify(data);
+div.innerHTML = "<div>"+div.innerHTML + JSON.stringify(data)+"</div>";
   
-  $("#div").append
+  
   i = i+1;
   localStorage.setItem("i", i.toString());
- 
+  if (i > 20){
+  $('#data').find('div').first().remove();
+  }
 });
 }
 });
