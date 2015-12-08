@@ -7,12 +7,21 @@
 <script>
 $( document ).ready(function() {
     console.log( "ready!" );
-    var i=1;
+    localStorage.setItem("i", "1");
+    
+    
+    var myVar = setInterval(function(){ addData() }, 500);
+    function addData(){
+      i = localStorage.getItem("i");
+      i =  parseInt(i); 
     $.get( "/p/"+i.toString(), function( data ) {
   console.log(i);
   console.log(data);
   i = i+1;
+  localStorage.setItem("i", i.toString());
+ 
 });
+}
 });
 
 
