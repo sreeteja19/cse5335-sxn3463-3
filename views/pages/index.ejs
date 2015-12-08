@@ -17,6 +17,10 @@ $( document ).ready(function() {
     $.get( "/p/"+i.toString(), function( data ) {
   console.log(i);
   console.log(data);
+  var div = document.getElementById('data');
+div.innerHTML = div.innerHTML + JSON.stringify(data);
+  
+  $("#div").append
   i = i+1;
   localStorage.setItem("i", i.toString());
  
@@ -30,7 +34,7 @@ $( document ).ready(function() {
 
 <body>
 
-<table id="data">
-</table>
+<div id="data">
+</div>
 </body>
 </html>
