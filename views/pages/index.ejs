@@ -24,7 +24,7 @@ div.innerHTML = "<div>"+div.innerHTML + JSON.stringify(data)+"</div>";
   i = i+1;
   localStorage.setItem("i", i.toString());
   if (i > 20){
-  $('#data').find('div:first').remove();
+  $('#data > div:first').remove();
   }
 });
 }
