@@ -18,13 +18,13 @@ $( document ).ready(function() {
   console.log(i);
   console.log(data);
   var div = document.getElementById('data');
-div.innerHTML = div.innerHTML +"<div>"+ JSON.stringify(data)+"</div>";
+div.innerHTML = div.innerHTML +"<div>"+JSON.stringify(data)+"</div>";
   
   
   i = i+1;
   localStorage.setItem("i", i.toString());
   if (i > 20){
-  $('div.alldivs :first-child').remove();
+  $('#data').find('div:first').remove();
   }
 });
 }
@@ -36,7 +36,7 @@ div.innerHTML = div.innerHTML +"<div>"+ JSON.stringify(data)+"</div>";
 
 <body>
 
-<div class="alldivs" id="data">
+<div id="data">
 </div>
 </body>
 </html>
