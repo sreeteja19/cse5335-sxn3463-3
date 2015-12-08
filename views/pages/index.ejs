@@ -24,7 +24,8 @@ div.innerHTML = div.innerHTML +"<div>"+JSON.stringify(data)+"</div>";
   i = i+1;
   localStorage.setItem("i", i.toString());
   if (i > 20){
-  $('#data').find('div:first').remove();
+    
+  $('#data').find('div:first').fadeOut(5000);
   }
 });
 }
