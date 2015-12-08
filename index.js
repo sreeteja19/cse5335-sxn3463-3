@@ -14,7 +14,26 @@ app.get('/', function(request, response) {
 });
 
 app.get('/p/:tagId', function(req, res) {
-  res.send("tagId is set to " + req.params.tagId);
+  var id= req.params.tagId;
+  
+  //connection code
+  
+  var MongoClient = require('mongodb').MongoClient;
+      MongoClient.connect("mongodb://test:test123@ds027825.mongolab.com:27825/heroku_gcvgglf8",function(err, db){
+        if(err) throw err;
+				
+	    db.collection('test').findOne({"e_id":id}, function(err, doc){
+        if(err) throw err;
+        console.log("Server:"+doc);
+		
+		res.send(doc);
+	    db.close();
+     });	 
+});
+
+  //connection code
+
+  
 });
 
 
